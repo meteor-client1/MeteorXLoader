@@ -1,8 +1,3 @@
--- { Test } --
-
-
-
-
 -- { Open / Close } --
 local ToggleUI = Instance.new("ScreenGui")
 local ToggleButton = Instance.new("TextButton")
@@ -363,12 +358,6 @@ Flag = "ClaimCrab",
 CallBack = print
 })
 
-Crab:AddToggle({
-Name = "Unreder Player Carb Cage",
-Flag = "UnredarCarb",
-CallBack = print
-})
-
 
 
 
@@ -699,11 +688,13 @@ CallBack = print
 
 -- { Angler } --
 local Angler = Quest:CreateSection({
-Name = "Anglers"
+Name = "Anglers",
+Side = "Right"
 })
 
 Angler:AddToggle({
-Name = "Auto Angler Quests"
+Name = "Auto Angler Quests",
+CallBack = print
 })
 
 
@@ -782,8 +773,7 @@ CallBack = print
 
 -- { Shop 2 } --
 local Shop2 = Shop:CreateSection({
-Name = "Shop 2 🛒",
-Side = "Right"
+Name = "Shop 2 🛒"
 })
 
 Shop2:AddToggle({
@@ -816,9 +806,111 @@ CallBack = print
 
 
 
+-- { Shop 3 }
+local Shop3 = Shop:CreateSection({
+Name = "Shop 3 🛒",
+Side = "Right"
+})
 
+Shop3:AddButton({
+Name = "Buy Flimsy Rod",
+CallBack = print
+})
 
+Shop3:AddButton({
+Name = "Buy Training Rod",
+CallBack = print
+})
 
+Shop3:AddButton({
+Name = "Buy Plastic Rod",
+CallBack = print
+})
+
+Shop3:AddButton({
+Name = "Buy Carbon Rod",
+CallBack = print
+})
+
+Shop3:AddButton({
+Name = "Buy Long Rod",
+CallBack = print
+})
+
+Shop3:AddButton({
+Name = "Buy Steady Rod",
+CallBack = print
+})
+
+Shop3:AddButton({
+Name = "Buy Fortune Rod",
+CallBack = print
+})
+
+Shop3:AddButton({
+Name = "Buy Rapid Rod",
+CallBack = print
+})
+
+Shop3:AddButton({
+Name = "Buy Nocturnal Rod",
+CallBack = print
+})
+
+Shop3:AddButton({
+Name = "Buy Aurora Rod",
+CallBack = print
+})
+
+Shop3:AddButton({
+Name = "Buy Rod of The Depths",
+CallBack = print
+})
+
+Shop3:AddButton({
+Name = "Buy Magnet Rod",
+CallBack = print
+})
+
+Shop3:AddButton({
+Name = "Buy Kings Rod",
+CallBack = print
+})
+
+Shop3:AddButton({
+Name = "Buy Destiny Rod",
+CallBack = print
+})
+
+Shop3:AddButton({
+Name = "Buy Midas Rod",
+CallBack = print
+})
+
+Shop3:AddButton({
+Name = "Buy Mythical Rod",
+CallBack = print
+})
+
+Shop3:AddButton({
+Name = "Buy Reinforced Rod",
+CallBack = print
+})
+
+Shop3:AddButton({
+Name = "Buy Trident Rod",
+CallBack = print
+})
+
+Shop3:AddButton({
+Name = "Buy Scurvy Rod",
+CallBack = print
+})
+
+Shop3:AddButton({
+Name = "Buy Relic Rod",
+CallBack = print
+})
 
 
 
@@ -1152,4 +1244,5 @@ BlrFog:AddToggle({
 Name = "Remove Fog",
 CallBack = print
 })
+
 
