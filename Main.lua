@@ -1108,7 +1108,8 @@ CallBack = print
 
 -- { Water } --
 local WaterSec = MiscTab:CreateSection({
-Name = "Water💧"
+Name = "Water💧",
+Side = "Right"
 })
 
 WaterSec:AddToggle({
@@ -1133,7 +1134,8 @@ CallBack = print
 
 -- { Blur / Fog } --
 local BlrFog = MiscTab:CreateSection({
-Name = "Blur / Fog 🌫"
+Name = "Blur / Fog 🌫",
+Side = "Right"
 })
 
 BlrFog:AddToggle({
