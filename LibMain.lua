@@ -6917,7 +6917,7 @@ function library:CreateWindow(options, ...)
 		}}, {"AddPersistence", "__Designer.Persistence.ThemeFile", filessection, {
 			Name = "Theme Profile",
 			Flag = "__Designer.Files.ThemeFile",
-			Workspace = "Pepsi Lib Themes",
+			Workspace = "Lunar Lib Theme",
 			Flags = flags,
 			Suffix = "Theme",
 			Desginer = true
