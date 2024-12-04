@@ -1146,6 +1146,3 @@ Name = "Remove Fog",
 CallBack = print
 })
 
-
-
-
