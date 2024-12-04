@@ -1,4 +1,50 @@
--- { Fisch } -- Open Source
+-- { Open / Close } --
+local ToggleUI = Instance.new("ScreenGui")
+local ToggleButton = Instance.new("TextButton")
+local BackgroundImage = Instance.new("ImageLabel")
+local ToggleButtonHUI = Instance.new("UICorner")
+
+
+ToggleUI.Name = "ToggleUI"
+ToggleUI.Parent = game.CoreGui
+ToggleUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+
+ToggleButton.Name = "ToggleButton"
+ToggleButton.Parent = ToggleUI
+ToggleButton.BackgroundColor3 = Color3.fromRGB(23, 212, 224)
+ToggleButton.BackgroundTransparency = 1  -- Make background transparent
+ToggleButton.BorderSizePixel = 0
+ToggleButton.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
+ToggleButton.Size = UDim2.new(0, 50, 0, 50)
+ToggleButton.Font = Enum.Font.SourceSans
+ToggleButton.Text = ""  
+ToggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+ToggleButton.TextSize = 14.000
+ToggleButton.Draggable = true
+
+
+BackgroundImage.Name = "BackgroundImage"
+BackgroundImage.Parent = ToggleButton
+BackgroundImage.BackgroundTransparency = 1
+BackgroundImage.Size = UDim2.new(1, 0, 1, 0)  -- Cover the entire ToggleButton
+BackgroundImage.Image = "rbxassetid://107584891022178"  -- Update the image ID
+BackgroundImage.ImageColor3 = Color3.fromRGB(255, 255, 255)  -- Set image color if needed
+
+
+ToggleButtonHUI.Parent = ToggleButton
+ToggleButtonHUI.CornerRadius = UDim.new(0, 10)  -- Adjust corner radius if needed
+
+
+local BackgroundImageHUI = Instance.new("UICorner")
+BackgroundImageHUI.CornerRadius = UDim.new(0, 10)  -- Same radius as ToggleButton
+BackgroundImageHUI.Parent = BackgroundImage
+
+
+ToggleButton.MouseButton1Click:Connect(function()
+    
+    game:GetService("VirtualInputManager"):SendKeyEvent(true, Enum.KeyCode.RightShift, false, game)
+end)
 
 
 
@@ -6,7 +52,17 @@
 
 
 
-local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/XLunarHub/LunarHub/refs/heads/main/LibMain.lua"))() 
+
+
+
+
+
+
+
+
+
+-- { Main } -- 
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/XLunarHub/LunarHub/refs/heads/main/LibMain.lua"))()
 local Wait = library.subs.Wait -- Only returns if the GUI has not been terminated. For 'while Wait() do' loops
 
 
@@ -402,7 +458,7 @@ local TotemList = {
 "Sundial Totem",
 "Eclipse Totem",
 "Meteor Totem"
-}
+};
 -- { Totem } --
 local Totem = Automatic:CreateSection({
 Name = "Totem 🔮"
@@ -773,7 +829,7 @@ Name = "Teleport"
 
 -- { Teleport Zone } --
 local TeleZone = TeleportTab:CreateSection({
-Name = "Teleport Zone"
+Name = "Teleport Zone ⚡️"
 })
 
 TeleZone:AddDropdown({
@@ -784,6 +840,11 @@ CallBack = print
 
 TeleZone:AddButton({
 Name = "Refresh Zone",
+CallBack = print
+})
+
+TeleZone:AddButton({
+Name = "Teleport Zone",
 CallBack = print
 })
 
@@ -835,7 +896,7 @@ local IslandList = {
 };
 -- { Teleport Island } --
 local TeleIs = TeleportTab:CreateSection({
-Name = "Teleport Island"
+Name = "Teleport Island ⚡️"
 })
 
 TeleIs:AddDropdown({
@@ -850,5 +911,237 @@ CallBack = print
 })
 
 
+
+
+
+local NPCList = {
+"None"
+};
+-- { Teleport NPC } --
+local TeleNpc = TeleportTab:CreateSection({
+Name = "Teleport NPC ⚡️"
+})
+
+TeleNpc:AddDropDown({
+Name = "Choose NPC",
+List = NPCList,
+CallBack = print
+})
+
+TeleNpc:AddButton({
+Name = "Refresh NPC",
+CallBack = print
+})
+
+TeleNpc:AddButton({
+Name = "Teleport Npc",
+CallBack = print
+})
+
+
+
+
+
+local ItemList = {
+"Basic Diving Gear",
+"Lucky Ros",
+"Fast Rod",
+"Carbon Rod",
+"Plastic Rod",
+"Trining Rod",
+"Flimsy Rod",
+"GPS",
+"Bait Crate",
+"Glider"
+}
+-- { Items } --
+local Items = TeleportTab:CreateSection({
+Name = "Teleport Item ⚡️"
+})
+
+Items:AddDropDown({
+Name = "Choose Item",
+List = ItemList,
+CallBack = print
+})
+
+Items:AddButton({
+Name = "Refresh Item",
+CallBack = print
+})
+
+Items:AddButton({
+Name = "Teleport Item",
+CallBack = print
+})
+
+
+
+
+
+
+-- { Teleport Totem } --
+local TeleTotem = TeleportTab:CreateSection({
+Name = "Teleport Totem ⚡️",
+Side = "Right"
+})
+
+TeleTotem:AddDropDown({
+Name = "Choose Totem",
+List = TotemList,
+CallBack = print
+})
+
+TeleTotem:AddButton({
+Name = "Teleport Totem",
+CallBack = print
+})
+
+
+
+
+
+local EventsList = {
+"None"
+};
+-- { Teleport Event } --
+local TeleEvent = TeleportTab:CreateSection({
+Name = "Teleport Event",
+Side = "Right"
+})
+
+TeleEvent:AddDropDown({
+Name = "Choose Event",
+List = EventsList,
+CallBack = print
+})
+
+TeleEvent:AddButton({
+Name = "Teleport Event",
+CallBack = print
+})
+
+local TeleOther = TeleportTab:CreateSection({
+Name = "Teleport Other ⚡️",
+Side = "Side"
+})
+
+TeleOther:AddButton({
+Name = "Teleport Safe Whirlpool",
+CallBack = print
+})
+
+TeleOther:AddButton({
+Name = "Teleport Trident",
+CallBack = print
+})
+
+TeleOther:AddButton({
+Name = "Teleport Aurora Rod",
+CallBack = print
+})
+
+
+
+
+
+
+-- { Misc } --
+local MiscTab = PepsisWorld:CreateTab({
+Name = "Misc"
+})
+
+local Fps = MiscTab:CreateSection({
+Name = "FPS Boost 🔥"
+})
+
+Fps:AddToggle({
+Name = "Reduce Lag",
+CallBack = print
+})
+
+Fps:AddToggle({
+Name = "Boost FPS",
+CallBack = print
+})
+
+Fps:AddToggle({
+Name = "White Screen",
+CallBack = print
+})
+
+Fps:AddToggle({
+Name = "Black Screen",
+CallBack = print
+})
+
+Fps:AddToggm({
+Name = "Hide Notification",
+CallBack = print
+})
+
+
+
+
+
+
+-- { Character } --
+local charSec = MiscTab:CreateSection({
+Name = "Character 👥"
+})
+
+charSec:AddToggle({
+Name = "Freeze Boby",
+CallBack = print
+})
+
+charSec:AddToggle({
+Name = "Lock Position",
+CallBack = print
+})
+
+
+
+
+
+-- { Water } --
+local WaterSec = MiscTab:CreateSection({
+Name = "Water💧"
+})
+
+WaterSec:AddToggle({
+Name = "Walk On Water",
+CallBack = print
+})
+
+WaterSec:AddToggle({
+Name = "Infinite Oxygen",
+CallBack = print
+})
+
+WaterSec:AddToggle({
+Name = "Anti-Swim",
+CallBack = print
+})
+
+
+
+
+
+
+-- { Blur / Fog } --
+local BlrFog = MiscTab:CreateSection({
+Name = "Blur / Fog 🌫"
+})
+
+BlrFog:AddToggle({
+Name = "Remove Blur",
+CallBack = print
+})
+
+BlrFog:AddToggle({
+Name = "Remove Fog",
+CallBack = print
+})
 
 
