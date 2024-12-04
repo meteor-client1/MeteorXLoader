@@ -1,3 +1,13 @@
+--[[
+
+FISCH Version 0.1.5 [ Release Soon... ]
+Discord : https://discord.gg/dgC2S7UaBk
+
+]]--
+
+
+
+
 -- { Open / Close } --
 local ToggleUI = Instance.new("ScreenGui")
 local ToggleButton = Instance.new("TextButton")
@@ -43,7 +53,7 @@ BackgroundImageHUI.Parent = BackgroundImage
 
 ToggleButton.MouseButton1Click:Connect(function()
     
-    game:GetService("VirtualInputManager"):SendKeyEvent(true, Enum.KeyCode.RightShift, false, game)
+    game:GetService("VirtualInputManager"):SendKeyEvent(true, Enum.KeyCode.RightShift, false, game)  -- Change KeyCode Here
 end)
 
 
@@ -61,7 +71,7 @@ end)
 
 
 
--- { Main } -- 
+-- { Library } -- 
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/XLunarHub/LunarHub/refs/heads/main/LibMain.lua"))()
 local Wait = library.subs.Wait -- Only returns if the GUI has not been terminated. For 'while Wait() do' loops
 
@@ -83,8 +93,7 @@ Name = "Main"
 })
 
 
-
-
+-- { Main Tab } --
 
 local ReelModeList = {
 "Faster",
@@ -97,13 +106,11 @@ Name = "Farm 🐟"
 
 Farming:AddToggle({
 Name = "Auto Farm",
-Flag = "AutoFarm",
 Callback = print
 })
 
 Farming:AddDropdown({
 Name = "Reel Mode",
-Flag = "ReelMode",
 List = ReelModeList,
 CallBack = print
 })
@@ -120,25 +127,21 @@ Name = "Config Farm ⚙️"
 
 ConfigAuto:AddToggle({
 Name = "Auto Cast",
-Flag = "AutoCast",
 CallBack = print
 })
 
 ConfigAuto:AddToggle({
 Name = "Auto Shake",
-Flag = "AutoShake",
 CallBack = print
 })
 
 ConfigAuto:AddToggle({
 Name = "Auto Reel",
-Flag = "AutoReel",
 CallBack = print
 })
 
 ConfigAuto:AddToggle({
 Name = "Auto Nuke",
-Flag = "AutoNuke",
 CallBack = print
 })
 
@@ -154,13 +157,11 @@ Name = "TreasureChest 🗺"
 
 TreasureChest:AddToggle({
 Name = "Find Treasure Chest",
-Flag = "AutoFindChest",
 Callback = print
 })
 
 TreasureChest:AddToggle({
 Name = "Fix Treasure Map",
-Flag = "AutoFixMap",
 CallBack = print
 })
 
@@ -193,14 +194,12 @@ Name = "Bestiary 📚"
 
 Bestiary:AddDropdown({
 Name = "Choose Map Bestiary",
-Flag = "ChooseMapBestiary",
 List = MapBestiaryList,
 CallBack = print
 })
 
 Bestiary:AddToggle({
 Name = "Auto Bestiary",
-Flag = "AutoBestiary",
 CallBack = print
 })
 
@@ -222,19 +221,18 @@ local BonesList = {
 };
 -- { Bones } --
 local Bones = MainTab:CreateSection({
-Name = "Bones 🦴"
+Name = "Bones 🦴",
+Side = "Right"
 })
 
 Bones:AddDropdown({
 Name = "Choose Bones",
-Flag = "ChooseBones",
 List = BonesList,
 CallBack = print
 })
 
 Bones:AddToggle({
 Name = "Auto Find Bones",
-Flag = "FindAllBones",
 CallBack = print
 })
 
@@ -245,19 +243,16 @@ CallBack = print
 
 -- { Fragment / Meteor } --
 local FraMete = MainTab:CreateSection({
-Name = "Fragment 💎 / Meteor ☄️",
-Side = "Right"
+Name = "Fragment 💎 / Meteor ☄️"
 })
 
 FraMete:AddToggle({
 Name = "Auto Collect Fragment",
-Flag = "CollectFragment",
 Callback = print
 })
 
 FraMete:AddToggle({
 Name = "Auto Collect Meteor",
-Flag = "CollectMeteor",
 CallBack = print
 })
 
@@ -274,43 +269,36 @@ Side = "Right"
 
 Rods:AddToggle({
 Name = "Auto Magma Rod",
-Flag = "MagmaRod",
 CallBack = print
 })
 
 Rods:AddToggle({
 Name = "Auto Fungel Rod",
-Flag = "FungelRod",
 CallBack = print
 })
 
 Rods:AddToggle({
 Name = "Auto Scurvy Rod",
-Flag = "ScurcyRod",
 CallBack = print
 })
 
 Rods:AddToggle({
 Name = "Auto Kings Rod",
-Flag = "KingRod",
 CallBack = print
 })
 
 Rods:AddToggle({
 Name = "Auto Trident Rod",
-Flag = "TridentRod",
 CallBack = print
 })
 
 Rods:AddToggle({
 Name = "Auto Relic Rod",
-Flag = "RelicRod",
 CallBack = print
 })
 
 Rods:AddToggle({
 Name = "Auto Phoenix Rod",
-Flag = "PhoenixRod",
 CallBack = print
 })
 
@@ -326,6 +314,7 @@ CallBack = print
 
 
 
+-- { Automatic } --
 
 local Automatic = PepsisWorld:CreateTab({
 Name = "Automatically"
@@ -342,19 +331,16 @@ Name = "Crab Cage 🥽"
 
 Crab:AddToggle({
 Name = "Auto Buy Carb Cage",
-Flag = "BuyCrab",
 CallBack = print
 })
 
 Crab:AddToggle({
 Name = "Auto Place Carb Cage",
-Flag = "PlaceCrab",
 CallBack = print
 })
 
 Crab:AddToggle({
 Name = "Auto Claim Crab Cage",
-Flag = "ClaimCrab",
 CallBack = print
 })
 
@@ -389,32 +375,27 @@ Name = "Bait 🐟"
 
 Bait:AddDropdown({
 Name = "Choose Bait",
-Flag = "ChooseBait",
 List = BaitList,
 CallBack = print
 })
 
 Bait:AddButton({
 Name = "Refresh Choose Bait",
-Flag = "RefreshBait",
 CallBack = print
 })
 
 Bait:AddToggle({
 Name = "Auto Equip Bait",
-Flag = "EquipBait",
 CallBack = print
 })
 
 Bait:AddToggle({
 Name = "Auto Equip Random Bait",
-Flag = "RandomBait",
 CallBack = print
 })
 
 Bait:AddToggle({
 Name = "Auto Buy Bait Crate",
-Flag = "BuyBait",
 CallBack = print
 })
 
@@ -430,13 +411,11 @@ Name = "Seller 💸"
 
 Seller:AddToggle({
 Name = "Auto Sell All",
-Flag = "SellAll",
 CallBack = print
 })
 
 Seller:AddToggle({
 Name = "Auto Sell On Hand",
-Flag = "SellOnHand",
 CallBack = print
 })
 
@@ -466,7 +445,6 @@ CallBack = print
 
 Totem:AddToggle({
 Name = "Auto Use Totem",
-Flag = "UseTotem",
 CallBack = print
 })
 
@@ -729,6 +707,7 @@ CallBack = print
 
 
 
+-- { Shop } --
 
 local Shop = PepsisWorld:CreateTab({
 Name = "Shop"
@@ -914,6 +893,17 @@ CallBack = print
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 -- { Teleport } --
 local TeleportTab = PepsisWorld:CreateTab({
 Name = "Teleport"
@@ -922,11 +912,9 @@ Name = "Teleport"
 
 
 
-
-
 -- { Teleport Zone } --
 local TeleZone = TeleportTab:CreateSection({
-Name = "Teleport Zone ⚡️"
+Name = "Teleport Zones ⚡️"
 })
 
 TeleZone:AddDropdown({
@@ -993,7 +981,7 @@ local IslandList = {
 };
 -- { Teleport Island } --
 local TeleIs = TeleportTab:CreateSection({
-Name = "Teleport Island ⚡️"
+Name = "Teleport Islands ⚡️"
 })
 
 TeleIs:AddDropdown({
@@ -1016,7 +1004,7 @@ local NPCList = {
 };
 -- { Teleport NPC } --
 local TeleNpc = TeleportTab:CreateSection({
-Name = "Teleport NPC ⚡️"
+Name = "Teleport NPCS ⚡️"
 })
 
 TeleNpc:AddDropDown({
@@ -1053,7 +1041,7 @@ local ItemList = {
 }
 -- { Items } --
 local Items = TeleportTab:CreateSection({
-Name = "Teleport Item ⚡️"
+Name = "Teleport Items ⚡️"
 })
 
 Items:AddDropDown({
@@ -1079,7 +1067,7 @@ CallBack = print
 
 -- { Teleport Totem } --
 local TeleTotem = TeleportTab:CreateSection({
-Name = "Teleport Totem ⚡️",
+Name = "Teleport Totems ⚡️",
 Side = "Right"
 })
 
@@ -1103,7 +1091,7 @@ local EventsList = {
 };
 -- { Teleport Event } --
 local TeleEvent = TeleportTab:CreateSection({
-Name = "Teleport Event",
+Name = "Teleport Events ⚡️",
 Side = "Right"
 })
 
@@ -1246,3 +1234,47 @@ CallBack = print
 })
 
 
+
+
+
+
+-- { Unrender } --
+local Unrender = MiscTab:CreateSection({
+Name = "Unrender 🚫"
+})
+
+Unrender:AddToggle({
+Name = "Unrender Crab Cage",
+CallBack = print
+})
+
+Unrender:AddToggle({
+Name = "Unrender Flag",
+CallBack = print
+})
+
+
+
+
+
+
+-- { Server } --
+local ServerSec = MiscTab:CreateSection({
+Name = "Server 🖥",
+Side = "Right"
+})
+
+ServerSec:AddButton({
+Name = "HopServer",
+CallBack = print
+})
+
+ServerSec:AddButton({
+Name = "HopLowServer",
+CallBack = print
+})
+
+ServerSec:AddButton({
+Name = "Rejoin",
+CallBack = print
+})
