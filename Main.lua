@@ -1,6 +1,6 @@
 --[[
 
-FISCH Version 0.1.5 [ Release Soon... ]
+FISCH Version 0.1.1 [ Hotfix ]
 Discord : https://discord.gg/dgC2S7UaBk
 
 ]]--
@@ -82,9 +82,7 @@ local Wait = library.subs.Wait -- Only returns if the GUI has not been terminate
 -- { Window } --
 local PepsisWorld = library:CreateWindow({
 Name = "Lunar Hub | Fisch",
-Themeable = {
-Info = "Lunar Hub Lib | Discord: C2S7UaBk"
-}
+Themeable = {}
 })
 
 
@@ -125,6 +123,11 @@ CallBack = print
 -- { ConfigAuto Tab } --
 local ConfigAuto = MainTab:CreateSection({
 Name = "Config Farm ⚙️"
+})
+
+ConfigAuto:AddToggle({
+Name = "Auto Equip Rod",
+CallBack = print
 })
 
 ConfigAuto:AddToggle({
@@ -913,7 +916,9 @@ Name = "Teleport"
 
 
 
-
+local ZoneList = {
+"None"
+};
 -- { Teleport Zone } --
 local TeleZone = TeleportTab:CreateSection({
 Name = "Teleport Zones ⚡️"
@@ -921,7 +926,7 @@ Name = "Teleport Zones ⚡️"
 
 TeleZone:AddDropdown({
 Name = "Choose Zone",
-List = {"None"},
+List = ZoneList,
 CallBack = print
 })
 
@@ -1002,7 +1007,25 @@ CallBack = print
 
 
 local NPCList = {
-"None"
+"Mirror Area",
+"Idle Fishing NPC Moosewood",
+"Idle Fisging NPC Moosewood2",
+"Pilgrime",
+"Moosewood Shipwright",
+"Arnold",
+"Paul",
+"Pierre",
+"Henry",
+"Appraiser",
+"Marc Merchant",
+"Inn Keeper",
+"Moosewood Angler",
+"Phineas",
+"Lucas",
+"Quiet Synph",
+"Daisy",
+"Laten Keeper",
+"Mods Laten Keeper"
 };
 -- { Teleport NPC } --
 local TeleNpc = TeleportTab:CreateSection({
@@ -1031,16 +1054,10 @@ CallBack = print
 
 local ItemList = {
 "Basic Diving Gear",
-"Lucky Ros",
-"Fast Rod",
-"Carbon Rod",
-"Plastic Rod",
-"Trining Rod",
-"Flimsy Rod",
 "GPS",
 "Bait Crate",
 "Glider"
-}
+};
 -- { Items } --
 local Items = TeleportTab:CreateSection({
 Name = "Teleport Items ⚡️"
@@ -1089,7 +1106,15 @@ CallBack = print
 
 
 local EventsList = {
-"None"
+"Isonade",
+"FischFright24",
+"Fischgiving"
+"Whale Shark",
+"Great White Shark",
+"Great Hammerhead Shark",
+"Megaloden Default",
+"Megaloden Ancient",
+"The Depths - Serpent"
 };
 -- { Teleport Event } --
 local TeleEvent = TeleportTab:CreateSection({
@@ -1108,9 +1133,15 @@ Name = "Teleport Event",
 CallBack = print
 })
 
+
+
+
+
+
+-- { Teleport Other } --
 local TeleOther = TeleportTab:CreateSection({
 Name = "Teleport Other ⚡️",
-Side = "Side"
+Side = "Right"
 })
 
 TeleOther:AddButton({
@@ -1119,7 +1150,7 @@ CallBack = print
 })
 
 TeleOther:AddButton({
-Name = "Teleport Trident",
+Name = "Teleport Trident Rod",
 CallBack = print
 })
 
@@ -1279,4 +1310,25 @@ CallBack = print
 ServerSec:AddButton({
 Name = "Rejoin",
 CallBack = print
+})
+
+
+
+
+
+
+local developerinfo = MiscTab:CreateSection({
+Name = "Developer"
+})
+
+developerinfo:AddLabel({
+Name = "Gui : Lunar Library 📕"
+})
+
+developerinfo:AddLabel({
+Name = "Discord : C2S7UaBk 🪪"
+})
+
+developerinfo:AddLabel({
+Name = "Thank For Support 🎉"
 })
