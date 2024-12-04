@@ -5051,7 +5051,7 @@ function library:CreateWindow(options, ...)
 				end
 				local designers = options.__designer
 				options.__designer = nil
-				local rainbowColorMode = false
+				local rainbowColorMode = true
 				if presetColor == "random" then
 					presetColor = Color3.new(math.random(), math.random(), math.random())
 				elseif presetColor == "rainbow" then
