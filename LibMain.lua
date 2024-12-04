@@ -7208,7 +7208,7 @@ function library:CreateWindow(options, ...)
 				end)
 			end
 			os_clock, starttime = nil
-		end)g
+		end)
 	end
 	return windowFunctions
 end
