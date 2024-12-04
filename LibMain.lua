@@ -5791,6 +5791,12 @@ function library:CreateWindow(options, ...)
 				common_table = nil
 			end
 		end
+		if option.Credit ~= false then
+			daaata[1 + #daaata] = {"AddLabel", "__Designersi.Labal.Creator", detailssection, {
+				Text = " Library By Lunar Hub 0.1 "
+			}}
+		elseif "Thank For Support" then
+		end
 		if options.Info then
 			local typ = type(options.Info)
 			if typ == "string" then
