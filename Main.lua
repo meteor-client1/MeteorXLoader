@@ -1,6 +1,6 @@
 --[[
 
-FISCH Version 0.1.1 [ Hotfix ]
+FISCH Version 0.2 [ Release ]
 Discord : https://discord.gg/dgC2S7UaBk
 
 ]]--
@@ -1108,7 +1108,7 @@ CallBack = print
 local EventsList = {
 "Isonade",
 "FischFright24",
-"Fischgiving"
+"Fischgiving",
 "Whale Shark",
 "Great White Shark",
 "Great Hammerhead Shark",
