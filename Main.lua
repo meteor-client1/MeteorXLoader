@@ -72,7 +72,7 @@ end)
 
 
 -- { Library } -- 
-local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/XLunarHub/LunarHub/refs/heads/main/LibraryLunar.lua"))()
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/XLunarHub/LunarHub/refs/heads/main/LibMain.lua"))()
 local Wait = library.subs.Wait -- Only returns if the GUI has not been terminated. For 'while Wait() do' loops
 
 
