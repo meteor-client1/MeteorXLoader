@@ -27,7 +27,7 @@ local library = {
 		sectionBackground = Color3.fromRGB(35, 34, 34),
 		section = Color3.fromRGB(176, 175, 176),
 		otherElementText = Color3.fromRGB(129, 127, 129),
-		elementText = Color3.fromRGB(rainbows),
+		elementText = Color3.fromRGB(rainbowColorMode),
 		elementBorder = Color3.fromRGB(20, 20, 20),
 		selectedOption = Color3.fromRGB(55, 55, 55),
 		unselectedOption = Color3.fromRGB(40, 40, 40),
@@ -5051,7 +5051,7 @@ function library:CreateWindow(options, ...)
 				end
 				local designers = options.__designer
 				options.__designer = nil
-				local rainbowColorMode = true
+				local rainbowColorMode = false
 				if presetColor == "random" then
 					presetColor = Color3.new(math.random(), math.random(), math.random())
 				elseif presetColor == "rainbow" then
