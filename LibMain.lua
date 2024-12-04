@@ -5749,7 +5749,7 @@ function library:CreateWindow(options, ...)
 			end
 		}}, {"AddPersistence", "__Designer.Persistence.WorkspaceProfile", filessection, persistoptions}, {"AddButton", "__Designer.Button.TerminateGUI", settingssection, {{
 			Name = "Terminate GUI",
-			Callback = library.unload, ToggleUi:Destroy()
+			Callback = library.unload
 		}, {
 			Name = "Reset GUI",
 			Callback = resetall
