@@ -82,7 +82,9 @@ local Wait = library.subs.Wait -- Only returns if the GUI has not been terminate
 -- { Window } --
 local PepsisWorld = library:CreateWindow({
 Name = "Lunar Hub | Fisch",
-Themeable = {}
+Themeable = {
+Info = "Lunar Hub Lib | Discord: C2S7UaBk"
+}
 })
 
 
