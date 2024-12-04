@@ -1046,11 +1046,13 @@ CallBack = print
 
 
 
--- { Misc } --
+-- { MiscTab } --
 local MiscTab = PepsisWorld:CreateTab({
 Name = "Misc"
 })
 
+
+-- { Fps Boost } --
 local Fps = MiscTab:CreateSection({
 Name = "FPS Boost 🔥"
 })
@@ -1075,7 +1077,7 @@ Name = "Black Screen",
 CallBack = print
 })
 
-Fps:AddToggm({
+Fps:AddToggle({
 Name = "Hide Notification",
 CallBack = print
 })
@@ -1086,16 +1088,16 @@ CallBack = print
 
 
 -- { Character } --
-local charSec = MiscTab:CreateSection({
+local BobySet = MiscTab:CreateSection({
 Name = "Character 👥"
 })
 
-charSec:AddToggle({
+BobySet:AddToggle({
 Name = "Freeze Boby",
 CallBack = print
 })
 
-charSec:AddToggle({
+BobySet:AddToggle({
 Name = "Lock Position",
 CallBack = print
 })
@@ -1143,5 +1145,7 @@ BlrFog:AddToggle({
 Name = "Remove Fog",
 CallBack = print
 })
+
+
 
 
