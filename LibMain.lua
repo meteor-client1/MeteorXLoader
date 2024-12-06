@@ -18,18 +18,18 @@ local library = {
 		easingDirection = Enum.EasingDirection.Out
 	},
 	colors = {
-		main = Color3.fromRGB(0, 255, 0),
+		main = Color3.fromRGB(rainbowsg),
 		background = Color3.fromRGB(40, 40, 40),
-		outerBorder = Color3.fromRGB(255, 15, 255),
+		outerBorder = Color3.fromRGB(rainbowsg),
 		innerBorder = Color3.fromRGB(73, 63, 73),
 		topGradient = Color3.fromRGB(35, 35, 35),
 		bottomGradient = Color3.fromRGB(29, 29, 29),
 		sectionBackground = Color3.fromRGB(35, 34, 34),
 		section = Color3.fromRGB(176, 175, 176),
 		otherElementText = Color3.fromRGB(129, 127, 129),
-		elementText = Color3.fromRGB(rainbows),
+		elementText = Color3.fromRGB(rainbowsg),
 		elementBorder = Color3.fromRGB(20, 20, 20),
-		selectedOption = Color3.fromRGB(rainbows),
+		selectedOption = Color3.fromRGB(rainbowsg),
 		unselectedOption = Color3.fromRGB(40, 40, 40),
 		hoveredOptionTop = Color3.fromRGB(65, 65, 65),
 		unhoveredOptionTop = Color3.fromRGB(50, 50, 50),
@@ -58,11 +58,11 @@ local library = {
 		end
 		return error("Seriously bad exploit. Can't find a place to store the GUI. Robust code can't help here.")
 	end)(),
-	colorpicker = false,
+	colorpicker = true,
 	colorpickerconflicts = {},
 	rainbowflags = {},
-	rainbows = 2,
-	rainbowsg = 0
+	rainbows = 4,
+	rainbowsg = 4
 }
 library.Subs = library.subs
 local library_flags = library.flags
