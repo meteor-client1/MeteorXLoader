@@ -60,9 +60,9 @@ local library = {
 	end)(),
 	colorpicker = false,
 	colorpickerconflicts = {},
-	rainbowflags = {"main", "outerBorder", "elementText", "selectedOption"},
-	rainbows = 4,
-	rainbowsg = 4
+	rainbowflags = {""},
+	rainbows = 0,
+	rainbowsg = 0
 }
 library.Subs = library.subs
 local library_flags = library.flags
@@ -5598,7 +5598,7 @@ function library:CreateWindow(options, ...)
 						elseif clr and type(clr) == "string" and tonumber(clr, 16) then
 							clr = Color3FromHex(clr)
 						end
-						task.spawn(setrainbow, true)
+						task.spawn(setrainbow, false)
 						library_flags[flagName] = clr
 						if options.Location then
 							options.Location[options.LocationFlag or flagName] = clr
