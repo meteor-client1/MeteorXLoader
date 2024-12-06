@@ -5598,7 +5598,7 @@ function library:CreateWindow(options, ...)
 						elseif clr and type(clr) == "string" and tonumber(clr, 16) then
 							clr = Color3FromHex(clr)
 						end
-						task.spawn(setrainbow, false)
+						task.spawn(setrainbow, true)
 						library_flags[flagName] = clr
 						if options.Location then
 							options.Location[options.LocationFlag or flagName] = clr
