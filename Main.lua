@@ -142,7 +142,31 @@ CallBack = print
 
 ConfigAuto:AddToggle({
 Name = "Auto Reel",
-CallBack = print
+CallBack = function(ReelFin)
+if ReelFin then
+_G.LLReelFinish = true
+while _G.LLReelFinish do
+wait()
+local args = {
+    [1] = 100,
+    [2] = true
+}
+
+game:GetService("ReplicatedStorage").events.reelfinished:FireServer(unpack(args))
+end
+else
+_G.LLReelFinish = false
+while _G.LLReelFinish do
+wait()
+local args = {
+    [1] = 100,
+    [2] = true
+}
+
+game:GetService("ReplicatedStorage").events.reelfinished:FireServer(unpack(args))
+end
+end
+end
 })
 
 ConfigAuto:AddToggle({
