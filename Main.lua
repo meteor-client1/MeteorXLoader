@@ -149,7 +149,7 @@ while _G.LLReelFinish do
 wait()
 local args = {
     [1] = 100,
-    [2] = true
+    [2] = false
 }
 
 game:GetService("ReplicatedStorage").events.reelfinished:FireServer(unpack(args))
@@ -160,7 +160,7 @@ while _G.LLReelFinish do
 wait()
 local args = {
     [1] = 100,
-    [2] = true
+    [2] = false
 }
 
 game:GetService("ReplicatedStorage").events.reelfinished:FireServer(unpack(args))
