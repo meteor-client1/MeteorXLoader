@@ -1,15 +1,3 @@
-game:GetService("StarterGui"):SetCore("SendNotification",{
-	Title = "Lunar Hub", 
-	Text = "Welcome To Lunar Hub", 
-	Icon = ""
-})
-wait(2)
-game:GetService("StarterGui"):SetCore("SendNotification",{
-	Title = "Luanr Hub", 
-	Text = "Checking Map. . . Please Wait", 
-	Icon = ""
-})
-wait(5)
 --[[
  .____                  ________ ___.    _____                           __                
  |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
