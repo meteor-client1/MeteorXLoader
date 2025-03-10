@@ -64,8 +64,7 @@ local Themes = {
 		"Sapphire",
 		"Cloud",
 		"Grape",
-		"Bloody",
-                "Rainbow"
+		"Bloody"
 	},
 	Dark = {
 		Name = "Dark",
@@ -99,7 +98,7 @@ local Themes = {
 		DialogBorder = Color3.fromRGB(70, 70, 70),
 		DialogInput = Color3.fromRGB(55, 55, 55),
 		DialogInputLine = Color3.fromRGB(160, 160, 160),
-		Text = Color3.fromRGB(math.random(), math.random(), math.random()),
+		Text = Color3.fromRGB(math.random(0, 255), math.random(0, 255), math.random(0, 255)),
 		SubText = Color3.fromRGB(170, 170, 170),
 		Hover = Color3.fromRGB(120, 120, 120),
 		HoverChange = 0.07,
