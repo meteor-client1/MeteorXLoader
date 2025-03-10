@@ -1,4 +1,5 @@
 
+
 --[[             |
 '                |   Last changes:     
 FluentPlus 1.2.3 |  10.03 add rainbow mode ******
@@ -98,7 +99,7 @@ local Themes = {
 		DialogBorder = Color3.fromRGB(70, 70, 70),
 		DialogInput = Color3.fromRGB(55, 55, 55),
 		DialogInputLine = Color3.fromRGB(160, 160, 160),
-		Text = Color3.fromRGB(math.random(0, 255), math.random(0, 255), math.random(0, 255)),
+		Text = rainbow_mode,
 		SubText = Color3.fromRGB(170, 170, 170),
 		Hover = Color3.fromRGB(120, 120, 120),
 		HoverChange = 0.07,
@@ -736,7 +737,7 @@ local Themes = {
 }
 
 local Library = {
-	Version = "1.2.2",
+	Version = "1.2.3",
 
 	OpenFrames = {},
 	Options = {},
@@ -6507,5 +6508,13 @@ AddSignal(MinimizeButton.MouseButton1Click, function()
 end)
 
 task.wait(0.1)
+
+
+
+spawn(function()
+	while true do
+		rainbow_mode = Color3.fromRGB(math.random(0, 255), math.random(0, 255), math.random(0, 255))
+	end
+end)
 
 return Library, SaveManager, InterfaceManager, Mobile
