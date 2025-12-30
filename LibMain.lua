@@ -3,9 +3,9 @@ if game.CoreGui:FindFirstChild("PepsiUi") then
 end
 
 local function RainbowMode()
-				game:GetService("RunService").RenderStepped:Connect(function()
-								return Color3.fromHSV((tick() % 5) / 5, 1, 1)
-				end)
+	game:GetService("RunService").RenderStepped:Connect(function()
+		return Color3.fromHSV((tick() % 5) / 5, 1, 1)
+	end)
 end
 
 
