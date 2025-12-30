@@ -3,7 +3,7 @@ if game.CoreGui:FindFirstChild("PepsiUi") then
 end
 
 local library = {
-	WorkspaceName = "Lunar Hub",
+	WorkspaceName = "Yuri Hub",
 	flags = {},
 	signals = {},
 	objects = {},
@@ -27,7 +27,7 @@ local library = {
 		sectionBackground = Color3.fromRGB(35, 34, 34),
 		section = Color3.fromRGB(176, 175, 176),
 		otherElementText = Color3.fromRGB(129, 127, 129),
-		elementText = Color3.fromRGB(13, 237, 132),
+		elementText = Color3.fromRGB(255, 255, 255),
 		elementBorder = Color3.fromRGB(20, 20, 20),
 		selectedOption = Color3.fromRGB(55, 55, 55),
 		unselectedOption = Color3.fromRGB(40, 40, 40),
@@ -60,7 +60,7 @@ local library = {
 	end)(),
 	colorpicker = false,
 	colorpickerconflicts = {},
-	rainbowflags = {""},
+	rainbowflags = {},
 	rainbows = 0,
 	rainbowsg = 0
 }
@@ -5949,3 +5949,11 @@ library.AddWindow = library.CreateWindow
 library.Window = library.CreateWindow
 library.W = library.CreateWindow
 return library, library_flags, library.subs
+
+local function RainbowMode()
+	return Color3.fromHSV((tick() % 5) / 5, 1, 1)
+end
+
+game:GetService("RunService").RenderStepped.Connect(function()
+			elementText = RainbowMode()
+end)
