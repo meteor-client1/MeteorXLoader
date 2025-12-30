@@ -2,6 +2,13 @@ if game.CoreGui:FindFirstChild("PepsiUi") then
     game.CoreGui:FindFirstChild("PepsiUi"):Destroy()
 end
 
+local function RainbowMode()
+				game:GetService("RunService").RenderStepped:Connect(function()
+								return Color3.fromHSV((tick() % 5) / 5, 1, 1)
+				end)
+end
+
+
 local library = {
 	WorkspaceName = "Yuri Hub",
 	flags = {},
@@ -28,7 +35,7 @@ local library = {
 		section = Color3.fromRGB(176, 175, 176),
 		otherElementText = Color3.fromRGB(129, 127, 129),
 		elementText = Color3.fromRGB(255, 255, 255),
-		elementBorder = Color3.fromRGB(20, 20, 20),
+		elementBorder = RainBowMode(),
 		selectedOption = Color3.fromRGB(55, 55, 55),
 		unselectedOption = Color3.fromRGB(40, 40, 40),
 		hoveredOptionTop = Color3.fromRGB(65, 65, 65),
@@ -5949,11 +5956,3 @@ library.AddWindow = library.CreateWindow
 library.Window = library.CreateWindow
 library.W = library.CreateWindow
 return library, library_flags, library.subs
-
-local function RainbowMode()
-	return Color3.fromHSV((tick() % 5) / 5, 1, 1)
-end
-
-game:GetService("RunService").RenderStepped.Connect(function()
-			elementText = RainbowMode()
-end)
